@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<?import java.util.ArrayList?>
+<GridPane alignment="CENTER" hgap="10" prefHeight="300.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" prefWidth="99.0" />
+      <ColumnConstraints minWidth="10.0" prefWidth="99.0" />
+      <ColumnConstraints prefWidth="99.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="30.0" prefHeight="99.0" />
+      <RowConstraints minHeight="30.0" prefHeight="99.0" />
+      <RowConstraints prefHeight="99.0" />
+   </rowConstraints>
+   <children>
+
+      <Button fx:id="btn1" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font></Button>
+      <Button fx:id="btn2" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="1">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font></Button>
+      <Button fx:id="btn3" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="2">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font></Button>
+      <Button fx:id="btn4" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.rowIndex="1">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font></Button>
+      <Button fx:id="btn5" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font></Button>
+      <Button fx:id="btn6" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn7" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.rowIndex="2">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn8" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn9" mnemonicParsing="false" onAction="#BtnOnClick" prefHeight="99.0" prefWidth="99.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <font>
+            <Font name="MS Reference Specialty" size="33.0" />
+         </font>
+      </Button>
+   </children>
+    <fx:define>
+        <ArrayList fx:id="btnList">
+            <fx:reference source="btn1" />
+            <fx:reference source="btn2" />
+            <fx:reference source="btn3" />
+            <fx:reference source="btn4" />
+            <fx:reference source="btn5" />
+            <fx:reference source="btn6" />
+            <fx:reference source="btn7" />
+            <fx:reference source="btn8" />
+            <fx:reference source="btn9" />
+        </ArrayList>
+    </fx:define>
+</GridPane>
