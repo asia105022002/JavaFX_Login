@@ -11,16 +11,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Login extends Application {
-    Stage primaryStage;
+    @FXML
+    private Pane root;
+    @FXML
+    private Pane mainRoot;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        this.primaryStage=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root));
@@ -31,42 +34,34 @@ public class Login extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
-    public void LoginMain(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MainFrame.fxml"));
-        primaryStage.setTitle("Main");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
-        primaryStage.show();
-    }
-
-    public void LoginMain() throws Exception {
-//        replaceSceneContent("MainFrame.fxml");
-    }
-//
-//    private Parent replaceSceneContent(String fxml) throws Exception {
-//        Parent page = (Parent) FXMLLoader.load(Login.class.getResource(fxml), null, new JavaFXBuilderFactory());
-//        Scene scene = primaryStage.getScene();
-//        if (scene == null) {
-//            scene = new Scene(page, 700, 450);
-//            scene.getStylesheets().add(Login.class.getResource("demo.css").toExternalForm());
-//            primaryStage.setScene(scene);
-//        } else {
-//            primaryStage.getScene().setRoot(page);
-//        }
-//        primaryStage.sizeToScene();
-//        return page;
-//    }
-
     @FXML
     private void login(javafx.event.ActionEvent event) throws IOException
     {
-        Parent blah = FXMLLoader.load(getClass().getResource("MainFrame.fxml"));
-        Scene scene = new Scene(blah);
-        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        appStage.setScene(scene);
-        appStage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("MainFrame.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        Stage primaryStage = (Stage) root.getScene().getWindow();
+        Stage mainStage = (Stage) mainRoot.getScene().getWindow();
+        double locX = primaryStage.getX();
+        double stageWidth=primaryStage.getWidth();
+        double locY = primaryStage.getY();
+        double stageHeight=primaryStage.getHeight();
+        double width=mainStage.getWidth();
+        double height=mainStage.getHeight();
+
+        stage.setX(locX+stageWidth/2-width/2);
+        stage.setY(locY+stageHeight/2-height/2);
+        stage.show();
     }
+
+    @FXML
+    public void test() {
+        Stage stage = (Stage) root.getScene().getWindow();
+        int locX = (int) stage.getX();
+        int locY = (int) stage.getY();
+    }
+
 }
 
 

@@ -22,6 +22,12 @@ public class Controller {
             Main second = new Main();
             second.show();
         }
+        else if(acField.getText().equals("")&& pwField.getText().equals("")) {
+            Stage stage = (Stage) acField.getScene().getWindow();
+            stage.close();
+            Main second = new Main();
+            second.show();
+        }
         else {
             Alert msg = new Alert(Alert.AlertType.ERROR);
             msg.setTitle("系統提示");
