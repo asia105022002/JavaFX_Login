@@ -1,42 +1,14 @@
-package sample;
+package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.stage.Stage;
-import javafx.stage.Window;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 
 import java.util.ArrayList;
 
-public class Controller {
-
-    @FXML
-    private TextField acField;
-    @FXML
-    private PasswordField pwField;
-
-    public void Login(ActionEvent event) throws Exception {
-        if(acField.getText().equals("105022002")&& pwField.getText().equals("105022002")) {
-            Stage stage = (Stage) acField.getScene().getWindow();
-            stage.close();
-            Main second = new Main();
-            second.show();
-        }
-        else if(acField.getText().equals("")&& pwField.getText().equals("")) {
-            Stage stage = (Stage) acField.getScene().getWindow();
-            stage.close();
-            Main second = new Main();
-            second.show();
-        }
-        else {
-            Alert msg = new Alert(Alert.AlertType.ERROR);
-            msg.setTitle("系統提示");
-            msg.setContentText("帳號或密碼錯誤");
-            msg.showAndWait();
-        }
-    }
-
-
+public class GoGameController {
     private boolean act=true;
     private int st=0;
 
